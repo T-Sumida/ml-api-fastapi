@@ -1,3 +1,6 @@
+# モデルファイルは追跡しない
+static/model/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

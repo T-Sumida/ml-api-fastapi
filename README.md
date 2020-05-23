@@ -10,7 +10,7 @@ Machine learning API implementation using fastapi
 
 
 # Requirement
-- tensorflow==1.14.1
+- tensorflow==1.15.2
 - fastapi
 - uvicorn
 - Jinja

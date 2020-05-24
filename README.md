@@ -36,4 +36,3 @@ Go to [http://localhost:8000](http://localhost:8000)
 # Author
 T-Sumida
 
-https://qiita.com/komakomako/items/8efd4184f6d7cf1363f2

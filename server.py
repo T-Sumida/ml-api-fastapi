@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import io
-from typing import List
-
+from typing import Dict, List, BinaryIO, Tuple
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -9,6 +8,7 @@ from tensorflow.keras.applications.resnet50 import decode_predictions
 from fastapi import FastAPI, Request, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.templating import _TemplateResponse
 
 # 画像認識モデルの用意
 global model, graph
@@ -25,7 +25,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 
-def read_image(bin_data, size=(224, 224)):
+def read_image(bin_data: BinaryIO, size: Tuple = (224, 224)) -> np.array:
     """画像を読み込む
 
     Arguments:
@@ -45,7 +45,7 @@ def read_image(bin_data, size=(224, 224)):
 
 
 @app.post("/api/image_recognition")
-async def image_recognition(files: List[UploadFile] = File(...)):
+async def image_recognition(files: List[UploadFile] = File(...)) -> Dict:
     """画像認識API
 
     Keyword Arguments:
@@ -63,5 +63,5 @@ async def image_recognition(files: List[UploadFile] = File(...)):
 
 
 @app.get("/")
-async def index(request: Request):
+async def index(request: Request) -> _TemplateResponse:
     return templates.TemplateResponse("index.html", {"request": request})

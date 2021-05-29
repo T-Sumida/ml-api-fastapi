@@ -20,6 +20,7 @@ mypy = "*"
 python_version = "3.7"
 
 [scripts]
+create = "python model_creator.py"
 type-check = "mypy ./app --config-file ./mypy.ini"
 build = "docker build -f ./Dockerfile -t ml-api-fastapi:0.0.1 ."
 start = "docker run -d --name ml-server -p 8000:8000 ml-api-fastapi:0.0.1"

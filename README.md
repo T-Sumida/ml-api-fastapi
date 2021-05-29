@@ -5,6 +5,7 @@ API demo of running a Tensorflow model using FastAPI.
 A sample of running ImageNet-based Resnet50 on Docker as a REST-API on FastAPI.
 API demo of running a Tensorflow model using FastAPI.
 
+**Qiitaに記載されているコードは[こちら](https://github.com/T-Sumida/ml-api-fastapi/tree/qiita)**
 
 # Demo
 ![](./pic/demo1.png)

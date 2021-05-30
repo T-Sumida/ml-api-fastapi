@@ -50,14 +50,14 @@ SavedModel will be output under models.
 
 ## Docker Deploy
 ```
-# build image
+# build docker image
 $pipenv run build
 
-# start container
+# start docker container
 $pipenv run start
 
 
-# stop container
+# stop docker container
 $pipenv run stop
 ```
 Go to [http://localhost:8000/docs](http://localhost:8000/docs)
